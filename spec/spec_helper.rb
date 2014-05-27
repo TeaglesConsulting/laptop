@@ -11,5 +11,5 @@ RSpec.configure do |config|
 end
 
 def laptop_vagrantfiles
-  Dir['./test/Vagrantfile.*']
+  Dir['./spec/vagrantfiles/Vagrantfile.*']
 end
