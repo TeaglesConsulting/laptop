@@ -20,6 +20,10 @@ class Distro
     run_command('vagrant up')
   end
 
+  def halt
+    run_command('vagrant halt')
+  end
+
   def prepare
     run_vagrant_ssh_command('sudo aptitude update')
     run_vagrant_ssh_command('sudo aptitude dist-upgrade -y')

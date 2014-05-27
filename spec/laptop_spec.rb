@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe 'Laptop applied to a vagrant box' do
+  after do
+    run_command('vagrant halt')
+  end
+
   laptop_vagrantfiles.each do |vagrantfile|
     it "should run laptop successfully for #{vagrantfile}" do
       distro = Distro.new(vagrantfile)
