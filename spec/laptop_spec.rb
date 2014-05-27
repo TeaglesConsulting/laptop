@@ -8,12 +8,13 @@ describe 'Laptop applied to a vagrant box' do
   laptop_vagrantfiles.each do |vagrantfile|
     it "should run laptop successfully for #{vagrantfile}" do
       distro = Distro.new(vagrantfile)
+      distro.link_vagrantfile
+
       next if distro.packaged?
 
       puts "Testing #{distro.basename}"
       build_laptop_script
 
-      distro.link_vagrantfile
       distro.reset
       distro.prepare
 

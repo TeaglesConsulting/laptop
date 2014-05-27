@@ -9,7 +9,7 @@ class Distro
   def link_vagrantfile
     vagrantfile_name = 'Vagrantfile'
 
-    if File.symlink?(vagrantfile_name)
+    if File.exists?(vagrantfile_name)
       File.unlink(vagrantfile_name)
     end
     File.symlink(vagrantfile, vagrantfile_name)
