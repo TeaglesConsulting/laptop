@@ -1,6 +1,8 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
+require 'cocaine'
 require 'rspec'
+require 'distro'
 
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
@@ -9,6 +11,5 @@ RSpec.configure do |config|
 end
 
 def laptop_vagrantfiles
-  #   Dir['./test/Vagrantfile.*']
-  %w|./test/Vagrantfile.debian-wheezy-64|
+  Dir['./test/Vagrantfile.*']
 end
